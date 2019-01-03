@@ -1,0 +1,57 @@
+.container {
+  margin-top: 10px;
+  left : 60px ;
+}
+
+.purchase-card {
+  width: 350px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 1em;
+  background-color: white;
+}
+
+.purchase-card > .show-grid {
+  padding-bottom: 1.5em;
+}
+
+.item-details-button:focus {
+  outline: none;
+}
+
+.promo-code-button:focus {
+  outline: none;
+}
+
+.btn-round {
+  border-radius: 17px;
+}
+
+.price-strike {
+  text-decoration-line: line-through;
+  color: grey;
+}
+.card-body {
+  position: absolute;
+  right: 300px;
+  top : 34px;
+  width: 200px;
+  height: 120px;
+}
+.topContainer{
+  display: flex;
+  flex-direction: row;
+}
+.shelf-item__del {
+  width: 16px;
+  height: 16px;
+  top: 15px;
+  right: 5%;
+  border-radius: 50%;
+  position: absolute;
+  background-size: auto 100%;
+  background-image: url("./../images/sprite_delete-icon.png");
+  background-repeat: no-repeat;
+  z-index: 2;
+  cursor: pointer; }
+  .shelf-item__del:hover {
+    background-position-x: -17px; }
