@@ -113,22 +113,25 @@ class Footer extends Component {
         <div className="row copyright_row">
           <div className="col">
             <div className="copyright d-flex flex-lg-row flex-column align-items-center justify-content-start">
-              <div class="cr_text">
+              <div className="cr_text">
 
-               Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+               Copyright 2018-{(new Date().getFullYear())} Extentia Negoce - All rights reserved.
                
               </div>
+              </div>
+              </div>
+              <div className="col">
+              <div className="copyright d-flex flex-lg-row flex-column align-items-center justify-content-start">
               <div className="ml-lg-auto cr_links">
                 <ul className="cr_list">
-                  <li><a href="#">Copyright notification</a></li>
                   <li><Link to="/term_of_use">Terms of Use</Link></li>
                   <li><Link to="/prvacy_policy">Privacy Policy</Link></li>
                 </ul>
               </div>
+              </div>
+              </div>
           </div>
         </div>
-      </div>
-      </div>
     </footer>
     );
   }

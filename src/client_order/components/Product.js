@@ -12,7 +12,7 @@ const Product = ({ price, quantity, title ,image, link }) => {
     <div className="product_image">
     <Link to={link}><img className="img-responsive" src={background} alt="" /></Link>
     </div>
-    <div className="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+    <div className="product_bubble product_bubble_right product_bubble_red align-items-center">
     <span>-$20</span>
     </div>
     <div className="product_info">
