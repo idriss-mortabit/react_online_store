@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import './../../styles/clientorder.css';
 import { Button, Grid} from 'react-bootstrap';
-import { BrowserRouter as Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Cart  = ({ products, total, onCheckoutClicked }) => {
   function removeProduct(product){
@@ -56,10 +56,12 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
       <h3>Your Cart</h3>
       <div>{nodes}</div>
       <p>Total: &#36;{total}</p>
-      <Button block bsStyle="success" className="btn-round" onClick={onCheckoutClicked}
+      <center><Link to='/shop/products/checkout'><Button block bsStyle="success" className="btn-round" onClick={onCheckoutClicked}
         disabled={hasProducts ? '' : 'disabled'}>
         Checkout
       </Button>
+      </Link>
+      </center>
       </Grid>
     </div>
   )
