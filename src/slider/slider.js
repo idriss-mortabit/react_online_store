@@ -27,6 +27,14 @@ import Background from './../images/slider_1.jpg';
 class Slider extends Component {
   render() {
     return (
+      <div>
+      <br/><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/>
+       <br/><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/>
+       <br/><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/>
+       <br/><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/>
+       <br/><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/>
+       <br/><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/>
+       <br/><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/>
       <div className="main_slider" style={{backgroundImage:'url('+Background+')'}}>
       <div className="container fill_height">
         <div className="row align-items-center fill_height">
@@ -39,7 +47,8 @@ class Slider extends Component {
           </div>
         </div>
       </div>
-    </div>
+    </div></div>
+
     );
   }
 }

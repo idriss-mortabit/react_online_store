@@ -5,6 +5,10 @@ class Faqs extends Component {
     return (
 <div className="container container--tiny">
 		<div className="section__title section__title--center">
+    <br/><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/>
+      <br/><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/>
+      <br/><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/>
+    <br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/>
             <h1 className="section__title-text h2">FAQs</h1>
         </div>
 

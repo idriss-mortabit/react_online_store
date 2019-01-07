@@ -53,12 +53,7 @@ class Contactus extends Component {
         return(
             <div class="super_container">
             <Header />
-            <br></br>
-            <br></br>
-            <br></br>
             <Contact />
-            <br></br>
-            <br></br>
             <Newsletter />
             <Footer />
             </div>
@@ -70,11 +65,6 @@ class Returnpolicy extends Component {
         return(
             <div class="super_container">
             <Header />
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
             <Return />
             <Newsletter />
             <Footer />
@@ -87,12 +77,6 @@ class Termsofuse extends Component {
         return(
             <div class="super_container">
             <Header />
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
             <Terms />
             <Newsletter />
             <Footer />
@@ -105,12 +89,6 @@ class Privacypolicy extends Component {
         return(
             <div class="super_container">
             <Header />
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
             <Privacy />
             <Newsletter />
             <Footer />
@@ -123,12 +101,6 @@ class Faq extends Component {
         return(
             <div class="super_container">
             <Header />
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
             <Faqs />
             <Newsletter />
             <Footer />
@@ -153,13 +125,7 @@ class Aboutus extends Component {
         return(
             <div class="super_container">
             <Header />
-            <br></br>
-            <br></br>
-            <br></br>
             <About />
-            <br></br>
-            <br></br>
-            <br></br>
             <Newsletter />
             <Footer />
             </div>

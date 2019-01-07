@@ -30,6 +30,9 @@ class About extends Component {
     return ( 
 <div>  
 <div className="about">
+<br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/>
+<br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/>
+<br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/>
   <div className="container">
     <div className="row">
       <div className="col">
@@ -80,7 +83,7 @@ class About extends Component {
 
 
 
-<div className="feature">
+<div className="about">
   <div className="feature_background" styles= {{backgroundImage:'url(' + Background + ')'}}></div>
   <div className="container">
     <div className="row">
@@ -101,33 +104,8 @@ class About extends Component {
             
             <div className="elements_accordions">
 
-              <div className="accordion_container">
-                <div className="accordion d-flex flex-row align-items-center"><div>Award for Best School 2017</div></div>
-                <div className="accordion_panel">
-                  <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                </div>
-              </div>
+             gtgtgtgtgtgtg
 
-              <div className="accordion_container">
-                <div className="accordion d-flex flex-row align-items-center active"><div>You’re learning from the best.</div></div>
-                <div className="accordion_panel">
-                  <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                </div>
-              </div>
-
-              <div className="accordion_container">
-                <div className="accordion d-flex flex-row align-items-center"><div>Our degrees are recognized worldwide.</div></div>
-                <div className="accordion_panel">
-                  <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                </div>
-              </div>
-
-              <div className="accordion_container">
-                <div className="accordion d-flex flex-row align-items-center"><div>We encourage our students to go global.</div></div>
-                <div className="accordion_panel">
-                  <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                </div>
-              </div>
 
             </div>
 
@@ -136,20 +114,13 @@ class About extends Component {
         </div>
       </div>
 
-      <div className="col-lg-6 feature_col">
-        <div className="feature_video d-flex flex-column align-items-center justify-content-center">
-          <div className="feature_video_background" style={{backgroundImage:'url(' + Background1 + ')'}}></div>
-          <a className="vimeo feature_video_button" href="https://player.vimeo.com/video/99340873?title=0" title="OH, PORTUGAL - IN 4K - Basti Hansen - Stock Footage">
-            <img src={ require("./../images/play.png")} alt=""/>
-          </a>
-        </div>
-      </div>
+     
     </div>
   </div>
 </div>
 
 
-<div className="team">
+<div className="about">
   <div className="container">
     <div className="row">
       <div className="col">
@@ -235,16 +206,6 @@ class About extends Component {
     </div>
   </div>
 </div>
-          <div className="table">
-            <ul id="horizontal-list">
-            <li><div className="owl-item partner_item"><img src={ require("./../images/partner_1.png")} alt=""/></div></li>
-            <li><div className="owl-item partner_item"><img src={ require("./../images/partner_2.png")} alt=""/></div></li>
-            <li><div className="owl-item partner_item"><img src={ require("./../images/partner_3.png")} alt=""/></div></li>
-            <li><div className="owl-item partner_item"><img src={ require("./../images/partner_4.png")} alt=""/></div></li>
-            <li><div className="owl-item partner_item"><img src={ require("./../images/partner_5.png")} alt=""/></div></li>
-            <li><div className="owl-item partner_item"><img src={ require("./../images/partner_6.png")} alt=""/></div></li>
-              </ul>
-          </div>
 </div>
     );
   }

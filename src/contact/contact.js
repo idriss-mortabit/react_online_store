@@ -5,7 +5,8 @@ class Contact extends Component {
     render(){
         return(
             <div className="contact_info_container">
-			<div className="container">
+			<br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/>
+      		<div className="container">
 				<div className="row">
 					<div className="col-lg-6">
 						<div className="contact_form">

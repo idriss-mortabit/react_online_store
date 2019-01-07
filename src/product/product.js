@@ -145,7 +145,7 @@ const Productpage = ({ product, onAddToCartClicked }) => {
 					</span>
 					<span className="grey-text ml-1">
 						<small>
-							<s>{product.price*1.1}</s>
+							<s>{(product.price*1.1).toFixed(2)}</s>
 						</small>
 					</span>
 				</h4>
