@@ -56,17 +56,19 @@ import Checkout from './../client_order/components/checkout'
 	import ScrollToTop from 'react-router-scroll-top'
 
 	const ProductsRouter = ({ products, addToCart }) => (
+			<Router>
 				<ScrollToTop>
 					<App />
 					<Route exact path='/shop/products/checkout' component={Checkout}  />
 			{products.map(product => (
-				<Route exact path={product.link} render={(props) => <Productpage {...props}
+					<Route exact path={product.link} render={(props) => <Productpage {...props}
 					key={product.id} 
 					product={product} 
 					onAddToCartClicked={() => addToCart(product.id)} 
 					/>}  />
 			))}
-			</ScrollToTop>
+				</ScrollToTop>
+			</Router>
 		)
   ProductsRouter.propTypes = {
 	products: PropTypes.arrayOf(PropTypes.shape({

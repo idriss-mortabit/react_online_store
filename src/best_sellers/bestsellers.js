@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './../styles/bestsellers.css';
+import './../styles/newarrivials.css';
 import './../styles/responsive.css';
 import './../styles/bootstrap4/bootstrap.min.css';
 import ProductsContainer1 from './../client_order/productlistBestSelRow1';

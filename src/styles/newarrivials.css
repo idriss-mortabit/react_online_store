@@ -18,7 +18,8 @@
 
 .new_arrivals
 {
-	width: 100%;
+	width: 95%;
+	margin-right: 0 auto;
 }
 .new_arrivals_title
 {
