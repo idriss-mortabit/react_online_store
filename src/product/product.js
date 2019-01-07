@@ -100,13 +100,20 @@ const Productpage = ({ product, onAddToCartClicked }) => {
     return (
 		<div class="super_container">
 		<Header />
-		<br></br>
-		<br></br>
-		<br></br>
-		<br></br>
-		<br></br>
+		<br/><br/>
+		<br/><br/>
+		<br/><br/>
+		<br/><br/>
+		<br/><br/>
+		<br/><br/>
+		<br/><br/>
+		<br/><br/>
+		<br/><br/>
+		<br/><br/>
+		<br/><br/>
+		<br/><br/>
 			<ModalBody className="d-flex">
-				<Col size="3" lg="5">
+				<Col className='mt-0' size="3" lg="5">
 				<Carousel activeItem={1} length={3} showControls={true} showIndicators={true} thumbnails className="z-depth-1">
 					<CarouselInner>
 						<CarouselItem itemId="1">
@@ -124,8 +131,11 @@ const Productpage = ({ product, onAddToCartClicked }) => {
 					</CarouselInner>
 				</Carousel>
 				</Col>
+				
 				<Col size="7" lg="7">
 				<h2 className="h2-responsive product-name">
+					<br/><br/>
+					<br/>
 					<strong>{product.title}</strong>
 				</h2>
 				<h4 className="h4-responsive">
