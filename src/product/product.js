@@ -14,7 +14,7 @@ import { connect } from 'react-redux'
 import { addToCart } from './../client_order/actions'
 import { getVisibleProducts } from './../client_order/reducers/products'
 import { BrowserRouter as Router, Route} from "react-router-dom";
-import Checkout from './../client_order/components/checkout' 
+import { Checkout, Order } from './../client_order/components/checkout' 
 //import './../plugins/colorbox/colorbox.css';
 //import './../plugins/OwlCarousel2-2.2.1/animate.css';
 //import './../plugins/font-awesome-4.7.0/css/font-awesome.min.css';
@@ -60,6 +60,7 @@ import Checkout from './../client_order/components/checkout'
 				<ScrollToTop>
 					<App />
 					<Route exact path='/shop/products/checkout' component={Checkout}  />
+					<Route exact path='/shop/products/checkout/ordersuccess' component={Order}  />
 			{products.map(product => (
 					<Route exact path={product.link} render={(props) => <Productpage {...props}
 					key={product.id} 

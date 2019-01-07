@@ -94,13 +94,17 @@ class Categories extends Component {
   render() {
     return (
       <div className="container product_section_container">
+       <br/><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/>
+      <br/><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/>
+      <br/><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/><br /><br/><br/>
+      <br/><br/>
       <div className="row">
         <div className="col product_section clearfix">
-      <Sidebar />
+
       <div className="main_content">
       <div className="products_iso">
         <div className="row">
-          <div className="col">
+  {/*        <div className="col">
 
             <div className="product_sorting_container product_sorting_container_top">
               <ul className="product_sorting">
@@ -136,7 +140,7 @@ class Categories extends Component {
                 <div className="page_total"><span>of</span> 3</div>
                 <div id="next_page" className="page_next"><a href="#"><i className="fa fa-long-arrow-right" aria-hidden="true"></i></a></div>
               </div>
-            </div>
+</div>*/}
             <div className="product-grid">
             <div className="new_arrivial_products">
             <ul>
@@ -144,6 +148,7 @@ class Categories extends Component {
             </ul>
             </div>
       </div>
+      {/*
       <div className="product_sorting_container product_sorting_container_bottom clearfix">
       <ul className="product_sorting">
         <li>
@@ -174,7 +179,7 @@ class Categories extends Component {
 
     </div>
 
-  </div>
+      </div>*/}
 </div>
 </div>
 </div>

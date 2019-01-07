@@ -7,7 +7,7 @@
 
 .products_iso
 {
-	width: 100%;
+	width: 125%;
 }
 .section_title
 {
@@ -298,7 +298,7 @@
 .sidebar
 {
 	float: left;
-	width: 200px;
+	width: 300px;
 	padding-right: 17px;
 }
 .sidebar_section
