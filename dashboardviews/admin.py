@@ -79,25 +79,29 @@ class CustomerAdmin(admin.ModelAdmin):
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
-        'name',
+        'title',
         'price',
         'inventory',
-        'categorie',
+        'category',
         'section',
         'row',
+        'fabric',
+        'color',
         'link',
         'image',
         'images',
         'description',
     )
     list_filter = (
-        'categorie',
+        'category',
         'price',
         'section',
+        'fabric',
+        'color',
         'row',
     )
-    ordering = ('name', 'categorie')
-    search_fields = ('name', 'categorie', 'section', 'row')
+    ordering = ('title', 'category')
+    search_fields = ('title', 'category', 'section', 'row')
 
 admin.site.site_header = format_html("Extentia Negoce Dashboard")
 admin.site.site_title = format_html("Extentia Negoce Dashboard")

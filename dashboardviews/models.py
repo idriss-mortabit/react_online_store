@@ -27,13 +27,15 @@ class Images(models.Model):
 
 class Product(models.Model):
     id = models.CharField(max_length=100, unique=True, primary_key=True)
-    name = models.CharField(_('name'), max_length=255)
+    title = models.CharField(_('title'), max_length=255)
     price = models.IntegerField(_('price'), max_length=255)
     inventory = models.IntegerField(_('inventory'), max_length=255)
-    categorie = models.CharField(_('categorie'), max_length=255)
+    category = models.CharField(_('category'), max_length=255)
     section = models.CharField(_('section'), max_length=255)
     row = models.IntegerField(_('row'), max_length=255)
     link = models.CharField(_('link'), max_length=470)
+    fabric = models.CharField(_('fabric'), max_length=470)
+    color = models.CharField(_('color'), max_length=470)
     image = models.CharField(_('image'), max_length=255)
     images = models.ForeignKey(Images, verbose_name=_('images'), on_delete=models.CASCADE)
     description = models.TextField(_('description'))
@@ -41,14 +43,14 @@ class Product(models.Model):
     class Meta:
         verbose_name = _('product')
         verbose_name_plural = _('products')
-        unique_together = ('id','name', 'inventory', "price", 'image', 'description','categorie', 'link', 'section', 'images', 'row')
+        unique_together = ('id','title', 'inventory', "price", 'image', 'description','category', 'link','fabric', 'color', 'section', 'images', 'row')
 
     def __str__(self):
-        return self.name
+        return self.title
 
     @staticmethod
     def autocomplete_search_fields():
-        return 'name'
+        return 'title'
 
 class Customer(models.Model):
     first_name = models.CharField(_('first name'), max_length=255)
