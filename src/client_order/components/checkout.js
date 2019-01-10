@@ -1,11 +1,38 @@
 import React, { Component } from 'react';
-import CartContainer from './../clientorder'
+import CartContainer from './../clientorder.1'
 import './../../styles/checkout.css'
 import { Link } from "react-router-dom";
 
 
 
 class Checkout extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {value1: '', value2: '', value3: '', button: 'disabled'};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value1: event.target.value1})
+    this.setState({value2: event.target.value2}) 
+    this.setState({value3: event.target.value3})
+    let val1=this.state.value1, val2=this.state.value1, val3=this.state.value1;
+    if (val1.trim() != "" && val2 != "" && this.state.value3 != ""){
+      this.setState({button: ''})
+    }
+    else{
+      this.setState({button: 'disabled'})
+    }
+  }
+
+  handleSubmit(event) {
+    if (this.state.value1.trim() != "" && this.state.value2.trim() != "" && this.state.value3.trim() != ""){
+      this.setState({button: ''})
+    }
+    event.preventDefault();
+  } 
     render() {
       return (
 <div className="checkout-panel">
@@ -18,15 +45,15 @@ class Checkout extends Component {
       <div className="step"></div>
     </div>
     <div class="input-fields">
-        <form>
+        <form onSubmit={this.handleSubmit}>
       <div className="form-row">
       <div className="form-group col-md-6">
           <label for="inputCity">First Name</label>
-          <input type="text" className="form-control" id="inputCity"  placeholder="First Name" required="required"/>
+          <input type="text" className="form-control" id="inputCity"  placeholder="First Name" value={this.state.value1} onChange={this.handleChange} />
         </div>
         <div className="form-group col-md-6">
           <label for="inputCity">Last Name</label>
-          <input type="text" className="form-control" id="inputCity" placeholder="Last Name" required="required" />
+          <input type="text" className="form-control" id="inputCity" placeholder="Last Name" value={this.state.value2} onChange={this.handleChange} />
         </div>
         <div className="form-group col-md-6">
           <label for="inputEmail4">Email</label>
@@ -34,7 +61,7 @@ class Checkout extends Component {
         </div>
         <div className="form-group col-md-6">
           <label for="inputPassword4">Phone</label>
-          <input type="text" className="form-control" id="inputPassword4" placeholder="Phone"  required="required" />
+          <input type="text" className="form-control" id="inputPassword4" placeholder="Phone"  value={this.state.value3} onChange={this.handleChange} />
         </div>
       </div>
       <div className="form-group">
@@ -50,14 +77,16 @@ class Checkout extends Component {
           <label for="inputCity">State</label>
           <input type="text" className="form-control" id="inputCity" placeholder="State"/>
         </div>
-
       </div>
     </form>
+    <div >
+    <CartContainer />
+    </div>
     </div>
     </div>
   <div className="panel-footer">
     <Link to='/shop'><button className="btn back-btn">Back To Store</button></Link>
-    <Link to='/shop/products/checkout/ordersuccess'><button className="btn next-btn">Confirmation</button></Link>
+    <Link to='/shop/products/checkout/ordersuccess'><button type="submit" disabled={this.state.button} className="btn next-btn" >Confirmation</button></Link>
   </div>
 </div>
       )}}
