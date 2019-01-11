@@ -24,8 +24,9 @@ urlpatterns = [
 	path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
 	path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
     path('admin/', admin.site.urls),
+    path('api/get/products', Products_Api.as_view()),
     re_path('',index_view, name='index_view'),
     #############################  API  #################################
-    path('api/get/products', Products_Api.as_view()),
+    
    # path('api/get/orders', Permissions_View.as_view()),
 ]

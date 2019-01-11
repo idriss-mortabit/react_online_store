@@ -51,17 +51,11 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
   )
   
   return (
-    <div className="container" >
-    <Grid className="purchase-card" style={{overflowY: 'scroll',overflowX: 'hidden', maxHeight:400}}>
+    <div className="container"  style={{overflow: 'hidden'}}>
+    <Grid className="purchase-card" style={{left: 10, overflowY:'scroll',maxHeight:350}}>
       <h3>Your Cart</h3>
       <div>{nodes}</div>
-      <p>Total: &#36;{total}</p>
-      <center><Link to='/shop/products/checkout'><Button block bsStyle="success" className="btn-round" onClick={onCheckoutClicked}
-        disabled={hasProducts ? '' : 'disabled'}>
-        Checkout
-      </Button>
-      </Link>
-      </center>
+      <h3>Total: &#36;{total}</h3>
       </Grid>
     </div>
   )

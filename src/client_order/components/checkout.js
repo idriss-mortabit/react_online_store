@@ -1,11 +1,187 @@
 import React, { Component } from 'react';
-import CartContainer from './../clientorder'
+import CartContainer from './../clientorder.1'
+import { connect } from 'react-redux'
+import { getTotal, getCartProducts } from './../reducers'
+import PropTypes from 'prop-types'
 import './../../styles/checkout.css'
 import { Link } from "react-router-dom";
+import update from 'react-addons-update';
 
 
 
 class Checkout extends Component {
+  constructor(props) {
+    super(props);
+    this.state = ({value1: ''}) 
+    this.state = ({value2: ''})
+    this.state = ({value3: ''}) 
+    this.state = ({value4: ''}) 
+    this.state = ({value5: ''})
+    this.state = ({value6: ''}) 
+    this.state = ({value7: ''}) 
+    this.state = ({
+      data: []
+  })
+  this.setState({ data: this.state.data.push({
+    cart:{},
+    costumer:{}
+  })})
+  console.log(this.state.data)
+    this.state = {button: 'disabled'};
+
+    this.handleChange1 = this.handleChange1.bind(this);
+    this.handleChange2 = this.handleChange2.bind(this);
+    this.handleChange3 = this.handleChange3.bind(this);
+    this.handleChange4 = this.handleChange4.bind(this);
+    this.handleChange5 = this.handleChange5.bind(this);
+    this.handleChange6 = this.handleChange6.bind(this);
+    this.handleChange7 = this.handleChange7.bind(this);
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleChange3(event){
+    this.setState({value3: event.target.value},function () {
+      if (this.state.value1 === undefined || this.state.value2 === undefined || this.state.value3 === undefined){
+        this.setState({button: 'disabled'})
+      }
+      else{
+        if (this.state.value1 !== "" && this.state.value2 !== "" && this.state.value3 !== ""){
+          this.setState({button: ''})
+        }
+        else{
+          this.setState({button: 'disabled'})
+        }
+      }
+  })
+  }
+  handleChange2(event){
+    this.setState({value2: event.target.value},function () {
+      if (this.state.value1 === undefined || this.state.value2 === undefined || this.state.value3 === undefined){
+        this.setState({button: 'disabled'})
+      }
+      else{
+        if (this.state.value1 !== "" && this.state.value2 !== "" && this.state.value3 !== ""){
+          this.setState({button: ''})
+        }
+        else{
+          this.setState({button: 'disabled'})
+        }
+      }
+  }) 
+  }
+  handleChange1(event){
+    this.setState({value1: event.target.value},function () {
+      if (this.state.value1 === undefined || this.state.value2 === undefined || this.state.value3 === undefined){
+        this.setState({button: 'disabled'})
+      }
+      else{
+        if (this.state.value1 !== "" && this.state.value2 !== "" && this.state.value3 !== ""){
+          this.setState({button: ''})
+        }
+        else{
+          this.setState({button: 'disabled'})
+        }
+      }
+  })
+  }
+  handleChange4(event){
+    this.setState({value4: event.target.value},function () {
+      if (this.state.value1 === undefined || this.state.value2 === undefined || this.state.value3 === undefined){
+        this.setState({button: 'disabled'})
+      }
+      else{
+        if (this.state.value1 !== "" && this.state.value2 !== "" && this.state.value3 !== ""){
+          this.setState({button: ''})
+        }
+        else{
+          this.setState({button: 'disabled'})
+        }
+      }
+  })
+  }
+  handleChange5(event){
+    this.setState({value5: event.target.value},function () {
+      if (this.state.value1 === undefined || this.state.value2 === undefined || this.state.value3 === undefined){
+        this.setState({button: 'disabled'})
+      }
+      else{
+        if (this.state.value1 !== "" && this.state.value2 !== "" && this.state.value3 !== ""){
+          this.setState({button: ''})
+        }
+        else{
+          this.setState({button: 'disabled'})
+        }
+      }
+  }) 
+  }
+  handleChange6(event){
+    this.setState({value6: event.target.value},function () {
+      if (this.state.value1 === undefined || this.state.value2 === undefined || this.state.value3 === undefined){
+        this.setState({button: 'disabled'})
+      }
+      else{
+        if (this.state.value1 !== "" && this.state.value2 !== "" && this.state.value3 !== ""){
+          this.setState({button: ''})
+        }
+        else{
+          this.setState({button: 'disabled'})
+        }
+      }
+  })
+  }
+  handleChange7(event){
+    var clients = {
+      first_name: this.state.value1.trim(),
+      last_name: this.state.value2.trim(),
+      email: this.state.value4.trim(),
+      phone: this.state.value3.trim(),
+      address: this.state.value5.trim(),
+      city: this.state.value6.trim(),
+      state: this.state.value7
+    }
+    this.setState({ data: this.state.data.push(clients) }, function() {console.log(this.state.data)})  
+      var products = [] 
+      for(var product in this.props.products) {
+        products.push({
+          product_id: product.id
+        })
+      }
+    this.setState({ data: [...this.state.data.cart, ...products ] }) 
+    this.setState({value7: event.target.value},function () {
+      if (this.state.value1 === undefined || this.state.value2 === undefined || this.state.value3 === undefined){
+        this.setState({button: 'disabled'})
+      }
+      else{
+        if (this.state.value1 !== "" && this.state.value2 !== "" && this.state.value3 !== ""){
+          this.setState({button: ''})
+        }
+        else{
+          this.setState({button: 'disabled'})
+        }
+      }
+  })
+  }
+
+  handleSubmit(event) {
+      var client = {
+        first_name: this.state.value1.trim(),
+        last_name: this.state.value2.trim(),
+        email: this.state.value4.trim(),
+        phone: this.state.value3.trim(),
+        address: this.state.value5.trim(),
+        city: this.state.value6.trim(),
+        state: this.state.value7.trim()
+      }
+      this.setState({ data: [...this.state.data.costumer, ...client ] })  
+      var products = [] 
+      for(var product in this.props.products) {
+        products.push({
+          product_id: product.id
+        })
+      }
+    this.setState({ data: [...this.state.data.cart, ...products ] }) 
+    event.preventDefault();
+  } 
     render() {
       return (
 <div className="checkout-panel">
@@ -18,46 +194,48 @@ class Checkout extends Component {
       <div className="step"></div>
     </div>
     <div class="input-fields">
-        <form>
+        <form onSubmit={this.handleSubmit}>
       <div className="form-row">
       <div className="form-group col-md-6">
           <label for="inputCity">First Name</label>
-          <input type="text" className="form-control" id="inputCity"  placeholder="First Name" required="required"/>
+          <input type="text" className="form-control" id="inputCity"  placeholder="First Name" value={this.state.value1} onChange={this.handleChange1} />
         </div>
         <div className="form-group col-md-6">
           <label for="inputCity">Last Name</label>
-          <input type="text" className="form-control" id="inputCity" placeholder="Last Name" required="required" />
+          <input type="text" className="form-control" id="inputCity" placeholder="Last Name" value={this.state.value2} onChange={this.handleChange2} />
         </div>
         <div className="form-group col-md-6">
           <label for="inputEmail4">Email</label>
-          <input type="email" className="form-control form-control-lg" id="inputEmail4" placeholder="Email"  />
+          <input type="email" className="form-control form-control-lg" id="inputEmail4" placeholder="Email" value={this.state.value4} onChange={this.handleChange4}  />
         </div>
         <div className="form-group col-md-6">
           <label for="inputPassword4">Phone</label>
-          <input type="text" className="form-control" id="inputPassword4" placeholder="Phone"  required="required" />
+          <input type="text" className="form-control" id="inputPassword4" placeholder="Phone"  value={this.state.value3} onChange={this.handleChange3} />
         </div>
       </div>
       <div className="form-group">
         <label for="inputAddress">Address</label>
-        <input type="text" className="form-control" id="inputAddress" placeholder="Address" />
+        <input type="text" className="form-control" id="inputAddress" placeholder="Address" value={this.state.value5} onChange={this.handleChange5} />
       </div>
       <div className="form-row">
         <div className="form-group col-md-6">
           <label for="inputCity">City</label>
-          <input type="text" className="form-control" id="inputCity" placeholder="City" />
+          <input type="text" className="form-control" id="inputCity" placeholder="City" value={this.state.value6} onChange={this.handleChange6} />
         </div>
         <div className="form-group col-md-6">
           <label for="inputCity">State</label>
-          <input type="text" className="form-control" id="inputCity" placeholder="State"/>
+          <input type="text" className="form-control" id="inputCity" placeholder="State" value={this.state.value7} onChange={this.handleChange7} />
         </div>
-
       </div>
     </form>
+    <div >
+    <CartContainer />
+    </div>
     </div>
     </div>
   <div className="panel-footer">
     <Link to='/shop'><button className="btn back-btn">Back To Store</button></Link>
-    <Link to='/shop/products/checkout/ordersuccess'><button className="btn next-btn">Confirmation</button></Link>
+    <Link to='/shop/products/checkout/ordersuccess'><button type="submit" disabled={this.state.button} className="btn next-btn" >Confirmation</button></Link>
   </div>
 </div>
       )}}
@@ -84,8 +262,23 @@ class Order extends Component {
 </div>
 </div>
     )}}
-    
-export { Checkout, Order}
+
+Checkout.propTypes = {
+  products: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    quantity: PropTypes.number.isRequired
+  })).isRequired,
+  total: PropTypes.string
+}
+
+const mapStateToProps = (state) => ({
+  products: getCartProducts(state),
+  total: getTotal(state)
+})    
+export default connect(mapStateToProps)(Checkout)
+export { Order}
 
 /*class Test extends React.Component {
   constructor(props){

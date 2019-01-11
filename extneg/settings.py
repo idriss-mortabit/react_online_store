@@ -42,6 +42,8 @@ INSTALLED_APPS = [
 	'extneg.apps.MyappConfig',
     'django.contrib.humanize',
     'dashboardviews',
+    'rest_framework',
+
 ]
 
 MIDDLEWARE = [
