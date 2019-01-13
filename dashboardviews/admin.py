@@ -53,6 +53,8 @@ class OrderAdmin(admin.ModelAdmin):
         'date',
         'product',
         'price',
+        'quantity',
+        'total',
     )
     search_fields = ('date','product','price')
     list_filter = (
@@ -68,12 +70,14 @@ class CustomerAdmin(admin.ModelAdmin):
         'last_name',
         'address',
         'city',
+        'state',
         'phone',
         'email',
     )
     search_fields = ('first_name', 'last_name', 'city', 'phone')
     list_filter = (
         'city',
+        'state',
     )
 
 

@@ -5,7 +5,8 @@ import { getTotal, getCartProducts } from './../reducers'
 import PropTypes from 'prop-types'
 import './../../styles/checkout.css'
 import { Link } from "react-router-dom";
-import update from 'react-addons-update';
+import jQuery from 'jquery';
+import  $ from 'jquery';
 
 
 
@@ -19,14 +20,6 @@ class Checkout extends Component {
     this.state = ({value5: ''})
     this.state = ({value6: ''}) 
     this.state = ({value7: ''}) 
-    this.state = ({
-      data: []
-  })
-  this.setState({ data: this.state.data.push({
-    cart:{},
-    costumer:{}
-  })})
-  console.log(this.state.data)
     this.state = {button: 'disabled'};
 
     this.handleChange1 = this.handleChange1.bind(this);
@@ -130,23 +123,6 @@ class Checkout extends Component {
   })
   }
   handleChange7(event){
-    var clients = {
-      first_name: this.state.value1.trim(),
-      last_name: this.state.value2.trim(),
-      email: this.state.value4.trim(),
-      phone: this.state.value3.trim(),
-      address: this.state.value5.trim(),
-      city: this.state.value6.trim(),
-      state: this.state.value7
-    }
-    this.setState({ data: this.state.data.push(clients) }, function() {console.log(this.state.data)})  
-      var products = [] 
-      for(var product in this.props.products) {
-        products.push({
-          product_id: product.id
-        })
-      }
-    this.setState({ data: [...this.state.data.cart, ...products ] }) 
     this.setState({value7: event.target.value},function () {
       if (this.state.value1 === undefined || this.state.value2 === undefined || this.state.value3 === undefined){
         this.setState({button: 'disabled'})
@@ -160,27 +136,50 @@ class Checkout extends Component {
         }
       }
   })
-  }
+      }
 
   handleSubmit(event) {
-      var client = {
-        first_name: this.state.value1.trim(),
-        last_name: this.state.value2.trim(),
-        email: this.state.value4.trim(),
-        phone: this.state.value3.trim(),
-        address: this.state.value5.trim(),
-        city: this.state.value6.trim(),
-        state: this.state.value7.trim()
-      }
-      this.setState({ data: [...this.state.data.costumer, ...client ] })  
+    var client = {
+      first_name: this.state.value1.trim(),
+      last_name: this.state.value2.trim(),
+      email: this.state.value4,
+      phone: this.state.value3.trim(),
+      address: this.state.value5,
+      city: this.state.value6,
+      state: this.state.value7
+    }
       var products = [] 
-      for(var product in this.props.products) {
+      for(var i=0; i<this.props.products.length ; i=i+1) {
         products.push({
-          product_id: product.id
+          product_id: this.props.products[i].id,
+          quantity : this.props.products[i].quantity
         })
       }
-    this.setState({ data: [...this.state.data.cart, ...products ] }) 
-    event.preventDefault();
+      var data =[{costumer:client, cart:products, total:this.props.total}]
+      console.log(data)
+      function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    var csrftoken = getCookie('csrftoken');
+      var request = new XMLHttpRequest();
+      request.open('POST', '/api/get/orders', true);
+      request.setRequestHeader('Content-Type', 'application/json');
+      request.setRequestHeader('X-CSRFToken', csrftoken);
+      request.send(JSON.stringify(data));
+      
+      event.preventDefault();
   } 
     render() {
       return (
@@ -235,7 +234,7 @@ class Checkout extends Component {
     </div>
   <div className="panel-footer">
     <Link to='/shop'><button className="btn back-btn">Back To Store</button></Link>
-    <Link to='/shop/products/checkout/ordersuccess'><button type="submit" disabled={this.state.button} className="btn next-btn" >Confirmation</button></Link>
+    <Link to='/shop/products/checkout/ordersuccess'><button type="submit" disabled={this.state.button} className="btn next-btn" onClick ={this.handleSubmit}>Confirmation</button></Link>
   </div>
 </div>
       )}}
@@ -254,7 +253,7 @@ class Order extends Component {
   </div>
   <div className="alert alert-success alert-dismissible">
   <h2><strong>Success!</strong></h2> 
-  <h5>Your order is successfully registered, we will contact you as soon as possible.<br /> Thank you for shopping with us</h5>
+  <h5>Yor order is successfully registered, we will contact you as soon as possible.<br /> Thank you for shopping with us</h5>
 </div>
  </div>
 <div className="panel-footer">

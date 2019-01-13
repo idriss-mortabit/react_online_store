@@ -28,7 +28,7 @@ class Images(models.Model):
 class Product(models.Model):
     id = models.CharField(max_length=100, unique=True, primary_key=True)
     title = models.CharField(_('title'), max_length=255)
-    price = models.IntegerField(_('price'), max_length=255)
+    price = models.FloatField(_('price'), max_length=255)
     inventory = models.IntegerField(_('inventory'), max_length=255)
     category = models.CharField(_('category'), max_length=255)
     section = models.CharField(_('section'), max_length=255)
@@ -57,6 +57,7 @@ class Customer(models.Model):
     last_name = models.CharField(_('last name'), max_length=255)
     address = models.CharField(_('address'), max_length=555)
     city = models.CharField(_('city'), max_length=555)
+    state = models.CharField(_('city'), max_length=555)
     # company = models.ForeignKey(Company, verbose_name=_('company'), related_name='persons', on_delete=models.CASCADE)
     phone = models.CharField(_('phone'), max_length=255)
     email = models.EmailField(_('email'), max_length=255)
@@ -79,7 +80,9 @@ class Order(models.Model):
     customer =  models.ForeignKey(Customer, verbose_name=_('customer'), on_delete=models.CASCADE)
     date = models.DateField(_("Date"), default=datetime.date.today)
     product = models.ForeignKey(Product, verbose_name=_('product'), on_delete=models.CASCADE)
-    price = models.IntegerField(_('price'), max_length=255)
+    price = models.FloatField(_('price'), max_length=255)
+    quantity =  models.IntegerField(_('quantity'), max_length=255)
+    total = models.FloatField(_('total'), max_length=255)
 
     class Meta:
         verbose_name = _('order')

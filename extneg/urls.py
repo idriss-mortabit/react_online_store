@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import include, path, re_path
 from jet.dashboard.dashboard_modules import google_analytics_views
 from extneg.api.product_list import Products_Api
+from extneg.api.orders import GetOrder
 from extneg.views.index_view import index_view
 # from extneg.api.orders import Products_Api
 
@@ -24,9 +25,8 @@ urlpatterns = [
 	path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
 	path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
     path('admin/', admin.site.urls),
-    path('api/get/products', Products_Api.as_view()),
-    re_path('',index_view, name='index_view'),
     #############################  API  #################################
-    
-   # path('api/get/orders', Permissions_View.as_view()),
+    path('api/get/products', Products_Api.as_view()),
+    path('api/get/orders', GetOrder),
+    re_path('',index_view, name='index_view'),
 ]

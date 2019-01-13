@@ -1,9 +1,19 @@
 from rest_framework.decorators import api_view
-from dashboardviews.models import Order
+from dashboardviews.models import Order, Product, Customer
+import datetime
+from random import randint
+from rest_framework.response import Response
 # b = Blog(name='Beatles Blog', tagline='All the latest Beatles news.')
 # b.save()
 @api_view(['POST'])
 def GetOrder(request):
   data = request.data
-  
-  return data["image"]
+  client = data[0].cart
+  mycustumer = Customer(first_name=client["first_name"], last_name=client["last_name"], address=client["address"], city=client["city"], email=client["email"], phone=client["phone"], state=client["state"])
+  mycustumer.save()
+  for singleproduct in data["0"]["cart"] :
+    myproduct = Product.Objects.get(id= singleproduct["product_id"])
+    myid = '#'+str(randint(11,99))+str(datetime.date.today)
+    myorder = Order(id = myid, customer = mycustumer, product = myproduct, price=myproduct.price , total= data["0"]["total"])
+    myorder.save()
+    return Response(data)

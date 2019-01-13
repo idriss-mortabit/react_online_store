@@ -2,4 +2,4 @@ from django.shortcuts import render
 
 def index_view(request):
 
-    return render(request, 'build/index.html', )
+    return render(request, 'build/index.html')
