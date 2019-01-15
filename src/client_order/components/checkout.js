@@ -234,7 +234,7 @@ class Checkout extends Component {
     </div>
   <div className="panel-footer">
     <Link to='/shop'><button className="btn back-btn">Back To Store</button></Link>
-    <Link to='/shop/products/checkout/ordersuccess'><button type="submit" disabled={this.state.button} className="btn next-btn" onClick ={this.handleSubmit}>Confirmation</button></Link>
+    <a href='/shop/products/checkout/ordersuccess'><button href = '/shop/products/checkout/ordersuccess' type="submit" disabled={this.state.button} className="btn next-btn" onClick ={this.handleSubmit}>Confirmation</button></a>
   </div>
 </div>
       )}}
@@ -253,11 +253,11 @@ class Order extends Component {
   </div>
   <div className="alert alert-success alert-dismissible">
   <h2><strong>Success!</strong></h2> 
-  <h5>Yor order is successfully registered, we will contact you as soon as possible.<br /> Thank you for shopping with us</h5>
+  <h5>Your order is successfully registered, we will contact you as soon as possible.<br /> Thank you for shopping with us</h5>
 </div>
  </div>
 <div className="panel-footer">
-<a href='/shop'><button className="btn store-btn center-block" >Back To Store</button></a>
+<Link to='/shop'><button className="btn store-btn center-block" >Back To Store</button></Link>
 </div>
 </div>
     )}}
