@@ -178,7 +178,7 @@ class Checkout extends Component {
       request.setRequestHeader('Content-Type', 'application/json');
       request.setRequestHeader('X-CSRFToken', csrftoken);
       request.send(JSON.stringify(data));
-      
+      window.location.href="/shop/products/checkout/ordersuccess"
       event.preventDefault();
   } 
     render() {
@@ -234,7 +234,7 @@ class Checkout extends Component {
     </div>
   <div className="panel-footer">
     <Link to='/shop'><button className="btn back-btn">Back To Store</button></Link>
-    <a href='/shop/products/checkout/ordersuccess'><button href = '/shop/products/checkout/ordersuccess' type="submit" disabled={this.state.button} className="btn next-btn" onClick ={this.handleSubmit}>Confirmation</button></a>
+    <button type="submit" disabled={this.state.button} className="btn next-btn" onClick ={this.handleSubmit}>Confirmation</button>
   </div>
 </div>
       )}}
