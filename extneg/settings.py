@@ -26,7 +26,7 @@ SECRET_KEY = 'b*q#81!6$6h570m19n_%c$%y@8ehy2je^z4n6cg!ordlirc#6*'
 DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 
-                 'www.extneg.com',
+                 'www.\extneg.com',
                  'extneg.com']
 
 
