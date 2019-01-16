@@ -23,10 +23,10 @@ static_dir = PROJECT_PATH + '/static/'
 SECRET_KEY = 'b*q#81!6$6h570m19n_%c$%y@8ehy2je^z4n6cg!ordlirc#6*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 
-                 'www.\extneg.com',
+                 'www.extneg.com',
                  'extneg.com']
 
 
