@@ -4,7 +4,6 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 import pickle
 from dashboardviews import models
-import os
 
 
 class Products_Api(APIView):
@@ -45,7 +44,6 @@ class Products_Api(APIView):
                         'image3' : Product.images.image3
                     }  
             })
-    os.remove("de./src/client_order/api/products.json")
     file = open("./src/client_order/api/products.json","w") 
     json.dump(data, file)
     file.close() 

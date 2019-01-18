@@ -26,7 +26,7 @@ class Images(models.Model):
 
 
 class Product(models.Model):
-    id = models.CharField(max_length=100, unique=True, primary_key=True)
+    id = models.IntegerField(max_length=100, unique=True, primary_key=True)
     title = models.CharField(_('title'), max_length=255)
     price = models.FloatField(_('price'), max_length=255)
     inventory = models.IntegerField(_('inventory'), max_length=255)
