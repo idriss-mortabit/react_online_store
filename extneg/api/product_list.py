@@ -44,7 +44,7 @@ class Products_Api(APIView):
                         'image3' : Product.images.image3
                     }  
             })
-    file = open("./src/client_order/api/products.json","w") 
+    file = open("./static/products.json","w") 
     json.dump(data, file)
     file.close() 
     return Response(data)

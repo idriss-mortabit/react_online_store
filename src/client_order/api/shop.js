@@ -7,6 +7,11 @@ import Importproducts from './products'
 const sleep = (milliseconds) => {
   return new Promise(resolve => setTimeout(resolve, milliseconds))
 }
+// const fetchData = () => {
+//   return fetch('/api/get/products')
+//    .then(results =>results.json())
+//     )
+//    }
 
 const TIMEOUT = 100
 const file = Importproducts()

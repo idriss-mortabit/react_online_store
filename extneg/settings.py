@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['127.0.0.1',
 		 'extneg.herokuapp.com']
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -130,7 +131,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_PATH, 'static')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 JET_DEFAULT_THEME = 'light-gray'
 JET_SIDE_MENU_COMPACT = True
 JET_APP_INDEX_DASHBOARD = 'extneg.dashboard.CustomAppIndexDashboard'
