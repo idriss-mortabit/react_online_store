@@ -114,6 +114,7 @@ const Productpage = ({ product, onAddToCartClicked }) => {
 		<br/><br/>
 		<br/><br/>
 			<ModalBody className="d-flex">
+			<div className='responsive'>
 				<Col className='mt-0' size="3" lg="5">
 				<Carousel activeItem={1} length={3} showControls={true} showIndicators={true} thumbnails className="z-depth-1">
 					<CarouselInner>
@@ -132,10 +133,10 @@ const Productpage = ({ product, onAddToCartClicked }) => {
 					</CarouselInner>
 				</Carousel>
 				</Col>
-				
+				</div>
+				<div className='responsive1'>
 				<Col size="7" lg="7">
 				<h2 className="h2-responsive product-name">
-					<br/><br/>
 					<br/>
 					<strong>{product.title}</strong>
 				</h2>
@@ -153,8 +154,8 @@ const Productpage = ({ product, onAddToCartClicked }) => {
 				<div className="tab_title">	
 						<h4>Description</h4>		
 				</div>
-				<div className='tab_text_block'>
-					<p>{product.description}</p>
+				<div className='tab_text_block' dangerouslySetInnerHTML={{__html: product.description}}>
+					
 				</div>
 				<Row className="justify-content-center">
 				<div onClick={onAddToCartClicked}
@@ -167,6 +168,7 @@ const Productpage = ({ product, onAddToCartClicked }) => {
 				  </div>
 				</Row>
 				</Col>
+				</div>
 			</ModalBody>
 			<Newsletter />
             <Footer />

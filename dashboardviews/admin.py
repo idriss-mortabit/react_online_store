@@ -92,9 +92,6 @@ class ProductAdmin(admin.ModelAdmin):
         'fabric',
         'color',
         'link',
-        'image',
-        'images',
-        'description',
     )
     list_filter = (
         'category',
