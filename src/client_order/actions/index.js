@@ -1,17 +1,29 @@
 import React from 'react'
 import shop from '../api/shop'
 import * as types from '../constants/ActionTypes'
+import axios from 'axios';
 
 const receiveProducts = products => ({
   type: types.RECEIVE_PRODUCTS,
   products
 })
-
 export const getAllProducts = () => dispatch => {
-  shop.getProducts(products => {
-    dispatch(receiveProducts(products))
-  })
-}
+    dispatch({type: "GET_PRODUCTS"})
+    axios.get("https://api.myjson.com/bins/19m9n8").then(response =>{
+          console.log("My api response", response.data)
+          dispatch({type: types.RECEIVE_PRODUCTS, payload: response.data})
+        })
+      .catch(err=> {
+        dispatch({type: "FETCH_PRODUCTS_ERROR", payload: err})
+
+      })
+  }
+
+// export const getAllProducts = () => dispatch => {
+//   shop.getProducts(products => {
+//     dispatch(receiveProducts(products))
+//   })
+// }
 
 const addToCartUnsafe = productId => ({
   type: types.ADD_TO_CART,
