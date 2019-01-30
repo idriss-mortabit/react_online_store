@@ -9,7 +9,7 @@ const receiveProducts = products => ({
 })
 export const getAllProducts = () => dispatch => {
     dispatch({type: "GET_PRODUCTS"})
-    axios.get("https://api.myjson.com/bins/19m9n8").then(response =>{
+    axios.get("/api/get/products").then(response =>{
           console.log("My api response", response.data)
           dispatch({type: types.RECEIVE_PRODUCTS, payload: response.data})
         })
