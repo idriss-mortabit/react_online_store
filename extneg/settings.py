@@ -98,7 +98,7 @@ DATABASES = {
         'USER': 'knowjrrt_extneg',
         'PASSWORD': 'jztN9cnvsbkv',
         'HOST': 'https://server233.web-hosting.com',   # Or an IP Address that your DB is hosted on
-        'PORT': '2083',
+        'PORT': '3306',
     }
 }
 # Password validation
