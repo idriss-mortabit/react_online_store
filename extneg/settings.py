@@ -93,12 +93,12 @@ WSGI_APPLICATION = 'extneg.wsgi.application'
 # }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'knowjrrt_extneg_db',
-        'USER': 'knowjrrt_extneg',
-        'PASSWORD': 'jztN9cnvsbkv',
-        'HOST': 'https://server233.web-hosting.com',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgresql', 
+        'NAME': 'ec2-54-235-67-106.compute-1.amazonaws.com',
+        'USER': 'da3c0kggkdlpac',
+        'PASSWORD': 'ede747b371f4ef77fc1b87ddc67507307069672d8907a9b6d0e7788b5d245452',
+        'HOST': 'postgres://laxouxrcgiffwk:ede747b371f4ef77fc1b87ddc67507307069672d8907a9b6d0e7788b5d245452@ec2-54-235-67-106.compute-1.amazonaws.com:5432/da3c0kggkdlpac',   # Or an IP Address that your DB is hosted on
+        'PORT': '5432',
     }
 }
 # Password validation
