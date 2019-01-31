@@ -85,22 +85,22 @@ WSGI_APPLICATION = 'extneg.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql', 
-        'NAME': 'da3c0kggkdlpac',
-        'USER': 'laxouxrcgiffwk',
-        'PASSWORD': 'ede747b371f4ef77fc1b87ddc67507307069672d8907a9b6d0e7788b5d245452',
-        'HOST': 'ec2-54-235-67-106.compute-1.amazonaws.com',   # Or an IP Address that your DB is hosted on
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql', 
+#         'NAME': 'da3c0kggkdlpac',
+#         'USER': 'laxouxrcgiffwk',
+#         'PASSWORD': 'ede747b371f4ef77fc1b87ddc67507307069672d8907a9b6d0e7788b5d245452',
+#         'HOST': 'ec2-54-235-67-106.compute-1.amazonaws.com',   # Or an IP Address that your DB is hosted on
+#         'PORT': '5432',
+#     }
+# }
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 

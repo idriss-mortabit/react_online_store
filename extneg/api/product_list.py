@@ -14,7 +14,7 @@ class Products_Api(APIView):
     # instance = models.Images.objects.all()
     # for inst in instance :
     #     inst.delete()  
-    # with open("./src/client_order/api/productsStorage.json") as fle:  
+    # with open("./src/client_order/api/products.json") as fle:  
     #     dat = json.load(fle)
     #     for m in dat :
     #         Img = models.Images(image1=m["images"]["image1"], image2=m["images"]["image2"], image3=m["images"]["image3"])
@@ -44,7 +44,7 @@ class Products_Api(APIView):
                         'image3' : Product.images.image3
                     }  
             })
-    file = open("./src/client_order/api/products.json","w") 
-    json.dump(data, file)
-    file.close() 
+    # file = open("./src/client_order/api/products.json","w") 
+    # json.dump(data, file)
+    # file.close() 
     return Response(data)
