@@ -94,10 +94,10 @@ WSGI_APPLICATION = 'extneg.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql', 
-        'NAME': 'ec2-54-235-67-106.compute-1.amazonaws.com',
-        'USER': 'da3c0kggkdlpac',
+        'NAME': 'da3c0kggkdlpac',
+        'USER': 'laxouxrcgiffwk',
         'PASSWORD': 'ede747b371f4ef77fc1b87ddc67507307069672d8907a9b6d0e7788b5d245452',
-        'HOST': 'postgres://laxouxrcgiffwk:ede747b371f4ef77fc1b87ddc67507307069672d8907a9b6d0e7788b5d245452@ec2-54-235-67-106.compute-1.amazonaws.com:5432/da3c0kggkdlpac',   # Or an IP Address that your DB is hosted on
+        'HOST': 'ec2-54-235-67-106.compute-1.amazonaws.com',   # Or an IP Address that your DB is hosted on
         'PORT': '5432',
     }
 }
