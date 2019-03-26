@@ -3,9 +3,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ###### the back-end link http://extneg.herokuapp.com/admin/
 ##### username : Admin
 ##### password : 9331extentia
-####### you can add products to card and make your order which will be saved in the admin dashboard (check the Order tab in the Admin Dashboard).
-####### you can try many other features like add products to the store or manage customers and charges.
-####### Available Scripts
+###### you can add products to card and make your order which will be saved in the admin dashboard (check the Order tab in the Admin Dashboard).
+###### you can try many other features like add products to the store or manage customers and charges.
+## Available Scripts
 
 In the project directory, you can run:
 
